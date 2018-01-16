@@ -22,7 +22,7 @@ def file_name(dir):
 
 
 def get_files(TICK_FOLDER):
-    dir = os.path.dirname(os.path.realpath('__file__'))
+    dir = os.path.dirname(os.path.realpath(__file__))
     dir += '/' + TICK_FOLDER[:-1]
     files = file_name(dir)
     return files

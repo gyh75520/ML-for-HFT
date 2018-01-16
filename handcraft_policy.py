@@ -132,12 +132,12 @@ class Stock():
     def write_next_price_to_csv(self):
         price = self.df.iloc[1:, 9:10]
         price.columns = ['next_price']
-        price.index = price.index-1
+        price.index = price.index - 1
         self.df = pd.merge(self.df.iloc[:-1, :], price, left_index=True, right_index=True)
         self.df.to_csv(self.file, index=False)
 
 
-dir = os.path.dirname(os.path.realpath('__file__'))
+dir = os.path.dirname(os.path.realpath(__file__))
 dir += '/' + TICK_FOLDER[:-1]
 print(dir)
 files = file_name(dir)
